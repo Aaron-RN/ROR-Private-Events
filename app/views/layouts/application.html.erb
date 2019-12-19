@@ -10,8 +10,14 @@
   </head>
 
   <body>
-    <header class="">User id: <%= current_user %></header>
+    <header class="">User id: <% if current_user %>
+      <%= current_user.username %>
+      <%else%>
+  Not logged-in
+    <%end%>  
+    </header>
     <div class="notice"><%= flash[:notice] %></div>
     <%= yield %>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

@@ -20,9 +20,19 @@ class UsersController < ApplicationController
   
 
   def sign_in
-    @user = User.find_by(username: params[:username])
+    @user = User.find_by(username: params[:user][:username])
+    if @user
     session[:user_id] = @user.id if @user
     flash.now[:notice] = 'Signed in as ' + @user.id.to_s
-    render 'sign_in'
+    redirect_to @user
+    else
+      flash.now[:notice] = 'User not found'
+      render 'sign_in_page'
+    end
   end
+
+  def sign_in_page
+    @user = User.new
+  end
+
 end
