@@ -10,6 +10,8 @@
   </head>
 
   <body>
+    <header class="">User id: <%= current_user %></header>
+    <div class="notice"><%= flash[:notice] %></div>
     <%= yield %>
   </body>
 </html>
