@@ -2,6 +2,16 @@
 <p>Find me in app/views/events/index.html.erb</p>
 
 
-<%= @events.each do |event| %>
+Upcoming Events:<br>
+<% @upcoming_events.each do |e| %>
+  <%= e.title %><br>
+  <%= e.date %><br>
+<% end %>
 
+<br>
+
+Past Events:<br>
+<% @past_events.each do |e| %>
+  <%= e.title %><br>
+  <%= e.date %><br>
 <% end %>
