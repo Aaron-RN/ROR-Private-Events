@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.create(username: params[:username])
 
     if @user.save
+      session[:user_id] = @user.id
       redirect_to @user
     else
       render 'new'
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
   def sign_in
     @user = User.find_by(username: params[:user][:username])
     if @user
-    session[:user_id] = @user.id if @user
+    session[:user_id] = @user.id 
     flash.now[:notice] = 'Signed in as ' + @user.id.to_s
     redirect_to @user
     else
