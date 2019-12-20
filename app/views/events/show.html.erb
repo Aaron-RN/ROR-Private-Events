@@ -1,3 +1,6 @@
 <p>Find me in app/views/events/show.html.erb</p>
 <%= @event.creator.username %>
-
+<br>
+<% @event.attendees.each do |a| %>
+  <%= a.username %>
+<% end %>
