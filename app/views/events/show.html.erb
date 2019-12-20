@@ -1,6 +1,11 @@
 <p>Find me in app/views/events/show.html.erb</p>
-<%= @event.creator.username %>
+Creator: <%= @event.creator.username %><br>
 <br>
+<%= pluralize(@event.attendees.count, "Person") %> Attending This Event:<br>
 <% @event.attendees.each do |a| %>
   <%= a.username %>
 <% end %>
+<br>
+ <%= link_to going_to_events_path(@event) do %>
+  <button> Going? </button>
+ <% end %>

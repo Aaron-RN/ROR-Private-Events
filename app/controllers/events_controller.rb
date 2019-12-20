@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :logged_in?, only: %i[create new]
+  before_action :logged_in?, only: %i[create new going_to]
 
   def index
     @events = Event.all
@@ -24,10 +24,25 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  # Method used to let users confirm their attendance to the event
+  def going_to
+    @event = Event.find(params[:format])
+    return unless @event
+
+    @event.attendees.each do |a|
+      return if a.id == current_user.id
+    end
+
+    @event.attendance.build(user_id:current_user.id)
+    if @event.save
+        flash[:notice] = 'Now attending this event'
+        redirect_to @event
+    end
+  end
+  
   private
 
   def events_params
     params.require(:event).permit(:title, :location, :date, :description)
   end
-
 end

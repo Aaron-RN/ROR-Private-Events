@@ -1,7 +1,9 @@
-<h1>Please, sign-in here</h1>
+<h1>Sign-in here</h1>
 <p>Find me in app/views/users/sign_in.html.erb</p>
 
 <%= form_for(:user, url: sign_in_path) do |f| %>
   Username: <%= f.text_field :username %><br />
   <%= f.submit 'Login'%>
+
+  <p>New User? <%= link_to "Sign up Here!", new_user_path %></p>
 <% end %>
