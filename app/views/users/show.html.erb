@@ -2,6 +2,13 @@
 <p>Find me in app/views/users/show.html.erb</p>
 
 <%= @user.username %>
+<br>
+Hosted Events:<br>
+<% @user.events.each do |e| %>
+  <%= e.title%><br>
+<% end %>
 
-<%= @user.events.each do |event| %>
-    <% end %>
+Attended Events:<br>
+<% @user.attended_events.each do |e| %>
+  <%= e.title%><br>
+<% end %>
