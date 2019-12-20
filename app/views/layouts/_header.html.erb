@@ -1,48 +1,13 @@
 <header>
-<style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
+    <ul>    
+    <li><%= link_to "All Events", events_path %></li>
+    <li><%= link_to "Create an Event", new_event_path %></li>
+    <li class="float-r"><%= link_to "Login", sign_in_path, class:"active" %></li>
 
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #111;
-}
-
-.active {
-  background-color: #4CAF50;
-}
-</style>
-
-<ul>    
-  <li><%= link_to "All Events", events_path %></li>
-  <li><%= link_to "Create an Event", new_event_path %></li>
-  <li style="float:right"><%= link_to "Login", sign_in_path, class:"active" %></li>
-</ul> <br>
-
-<div class="">User id: <% if current_user %>
-    <%= current_user.username %>
-    <%else%>
-    Not logged-in
-    <%end%>  
-</div> 
-
-
+    <% if current_user %> 
+    <li><%= link_to "My events", user_path(current_user) %></li> 
+    <%end%>
+    </ul> <br>
 
 </header>
 

@@ -6,6 +6,7 @@ Upcoming Events:<br>
 <% @upcoming_events.each do |e| %>
   <%= e.title %><br>
   <%= e.date %><br>
+  <%= link_to "Click to see the event", event_path(e) %>
 <% end %>
 
 <br>
@@ -14,4 +15,5 @@ Past Events:<br>
 <% @past_events.each do |e| %>
   <%= e.title %><br>
   <%= e.date %><br>
+  <%= link_to "Click to see the event", event_path(e) %>
 <% end %>
