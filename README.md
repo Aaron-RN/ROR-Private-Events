@@ -1,15 +1,14 @@
 # Members Only
 
-> In this project, we built an app that allows users to login, sign up and create posts but only users who are logged in are allowed to view who created the posts.
+> In this project we built a site similar to a private Eventbrite which allows users to create events and then manage user signups. Users can create events and send invitations and parties. Events take place at a specific date and at a location.
 
-![screenshot](./app_screenshot.jpg)
+![screenshot](./screenshot.png)
 
 
 ## Built With
 
 - Ruby
 - Ruby on Rails, Bootstrap
-- Gems: bcrypt
 
 ### Requirements
 
@@ -17,7 +16,7 @@
 
 ### Installation
 
-* Download repository to your local machine, then run `bundle install` and run `rails db:migrate`.
+* Download repository to your local machine, then run `bundle install`, `rails db:migrate` and `rails db:seed` (for an example database).
 
 ## Authors
 

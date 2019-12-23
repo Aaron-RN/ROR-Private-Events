@@ -1,0 +1,22 @@
+<h1>My events</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+
+<%= @user.username %>
+<br><br> 
+Hosted Events:<br><br>
+<% @created_events.each do |e| %>
+  <%= e.title%><br>
+<% end %>
+<br>
+
+Attended Events:<br>
+<% @past_events.each do |e| %>
+  <%= e.title%><br>
+<% end %>
+<br>
+
+
+Upcoming Events:<br>
+<% @upcoming_events.each do |e| %>
+    <%= e.title%><br>  
+<% end %>
