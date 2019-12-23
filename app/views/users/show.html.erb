@@ -10,19 +10,13 @@ Hosted Events:<br>
 <br>
 
 Attended Events:<br>
-<br>
-Past Events:<br>
-<% @user.attended_events.each do |e| %>
-  <% if event_past?(e.date)%>
-    <%= e.title%><br>
-  <% end %>
+<% @past_events.each do |e| %>
+  <%= e.title%><br>
 <% end %>
-
 <br>
+
 
 Upcoming Events:<br>
-<% @user.attended_events.each do |e| %>
-  <% unless event_past?(e.date)%>
-    <%= e.title%><br>
-  <% end %>
+<% @upcoming_events.each do |e| %>
+    <%= e.title%><br>  
 <% end %>
