@@ -4,7 +4,7 @@
 <%= @user.username %>
 <br>
 Hosted Events:<br>
-<% @user.events.each do |e| %>
+<% @created_events.each do |e| %>
   <%= e.title%><br>
 <% end %>
 <br>
