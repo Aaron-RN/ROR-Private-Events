@@ -2,18 +2,18 @@
 <p>Find me in app/views/events/index.html.erb</p>
 
 
-Upcoming Events:<br>
+Upcoming Events:<br><br>
 <% @upcoming_events.each do |e| %>
   <%= e.title %><br>
   <%= e.date %><br>
-  <%= link_to "Click to see the event", event_path(e) %>
+  <%= link_to "Click to see the event", event_path(e) %> <br> <br> 
 <% end %>
 
-<br>
+<br><br>
 
-Past Events:<br>
+Past Events:<br><br>
 <% @past_events.each do |e| %>
   <%= e.title %><br>
   <%= e.date %><br>
-  <%= link_to "Click to see the event", event_path(e) %>
+  <%= link_to "Click to see the event", event_path(e) %> <br> <br>
 <% end %>
